@@ -110,3 +110,40 @@ This project helped me understand:
 * API testing workflow
 * Difference between Path and Query Parameters
 * Validation and debugging
+```md
+## Features Implemented
+
+✅ GET API  
+✅ POST API  
+✅ PUT API  
+✅ DELETE API  
+
+✅ Request Body  
+✅ Path Parameters  
+✅ Query Parameters  
+
+✅ Validation (422 Error)  
+✅ Swagger Documentation  
+✅ API Testing with Postman  
+
+---
+
+## CRUD Operations
+
+| Method | Purpose |
+|--------|---------|
+| GET | Read Data |
+| POST | Create Data |
+| PUT | Update Data |
+| DELETE | Remove Data |
+
+---
+
+## API Concepts Practiced
+
+- Endpoint
+- Path Parameter
+- Query Parameter
+- Request Body
+- Data Validation
+```
