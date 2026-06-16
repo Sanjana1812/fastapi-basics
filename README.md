@@ -1,69 +1,101 @@
-# FastAPI Basics 🚀
+# 🎓 Student Management API
 
-This repository contains my beginner practice project built while learning **FastAPI**, **Postman**, and **Swagger UI**.
+A mini backend project built using **FastAPI** to practice API development, CRUD operations, validation, filtering, and API testing.
 
-The goal of this project is to understand how APIs work and how to test them using real backend development tools.
+This project started as FastAPI practice and evolved into a Student Management System with multiple API features.
 
 ---
 
-## What I Learned
+## Project Goal
 
-### API Requests
+Build and test REST APIs while learning:
 
-* GET → Retrieve data
-* POST → Send/Create data
-
-### FastAPI Concepts
-
-* Creating API endpoints
-* Request body using Pydantic
-* Data validation
-* Status codes
-
-### Parameters
-
+* FastAPI
+* CRUD Operations
+* Request Body
 * Path Parameters
 * Query Parameters
-
-### API Testing
-
-* Testing APIs using Postman
-* Testing APIs using Swagger UI (`/docs`)
+* Validation
+* API Testing
+* Backend Project Structure
 
 ---
 
-## Features Implemented
+## Features
 
-✅ Home API
-✅ Create User API
-✅ Path Parameter Example
-✅ Query Parameter Example
-✅ Validation using FastAPI
-✅ Swagger Documentation
+### Student Operations
+
+✅ Create Student
+✅ Get All Students
+✅ Get Student By ID
+✅ Update Student
+✅ Delete Student
+✅ Delete All Students
+
+### Advanced Features
+
+✅ Auto Student ID
+✅ Email Validation
+✅ Search Students By Course
+✅ Filter Students By Active Status
+✅ Sort Students By Age
+✅ Course Statistics
+✅ Dashboard Summary
+✅ Toggle Student Status
+
+---
+
+## Technologies Used
+
+* FastAPI
+* Pydantic
+* Uvicorn
+* Postman
+* Swagger UI
+
+---
+
+## API Endpoints
+
+| Method | Endpoint                     | Description            |
+| ------ | ---------------------------- | ---------------------- |
+| POST   | /student                     | Create student         |
+| GET    | /student                     | Get all students       |
+| GET    | /student/{student_id}        | Get student by ID      |
+| PUT    | /student/{student_id}        | Update student         |
+| DELETE | /student/{student_id}        | Delete student         |
+| DELETE | /student                     | Delete all students    |
+| GET    | /search                      | Search by course       |
+| GET    | /count                       | Count students         |
+| GET    | /dashboard                   | Student summary        |
+| GET    | /filter                      | Filter active students |
+| GET    | /stats/course                | Course statistics      |
+| PATCH  | /student/{student_id}/status | Toggle status          |
+| GET    | /sort                        | Sort students          |
 
 ---
 
 ## Project Structure
 
 ```plaintext
-fastapi-basics/
+student-management-api/
 │
 ├── main.py
-├── README.md
 ├── requirements.txt
+├── README.md
 ```
 
 ---
 
-## Run the Project
+## Run Project
 
 Install dependencies:
 
 ```bash
-pip install fastapi uvicorn
+pip install -r requirements.txt
 ```
 
-Start server:
+Run server:
 
 ```bash
 uvicorn main:app --reload
@@ -75,7 +107,7 @@ Server:
 http://127.0.0.1:8000
 ```
 
-Open Swagger Documentation:
+Open Swagger:
 
 ```plaintext
 http://127.0.0.1:8000/docs
@@ -83,22 +115,44 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## Example API
+## Example Request
 
-Request:
-
-```http
-GET /product/101?category=laptop
-```
-
-Response:
+POST /student
 
 ```json
 {
-  "product_id": 101,
-  "category": "laptop"
+    "name": "Sanjana",
+    "email": "abc@gmail.com",
+    "age": 22,
+    "course": "CSE",
+    "active": true
 }
 ```
+
+Example Response:
+
+```json
+{
+    "message": "Student created",
+    "student": {
+        "id": 1,
+        "name": "Sanjana",
+        "email": "abc@gmail.com",
+        "age": 22,
+        "course": "CSE",
+        "active": true
+    }
+}
+```
+
+---
+
+## API Testing
+
+Tested using:
+
+* Postman
+* Swagger UI (`/docs`)
 
 ---
 
@@ -106,44 +160,12 @@ Response:
 
 This project helped me understand:
 
-* API development using FastAPI
-* API testing workflow
-* Difference between Path and Query Parameters
-* Validation and debugging
-```md
-## Features Implemented
-
-✅ GET API  
-✅ POST API  
-✅ PUT API  
-✅ DELETE API  
-
-✅ Request Body  
-✅ Path Parameters  
-✅ Query Parameters  
-
-✅ Validation (422 Error)  
-✅ Swagger Documentation  
-✅ API Testing with Postman  
-
----
-
-## CRUD Operations
-
-| Method | Purpose |
-|--------|---------|
-| GET | Read Data |
-| POST | Create Data |
-| PUT | Update Data |
-| DELETE | Remove Data |
-
----
-
-## API Concepts Practiced
-
-- Endpoint
-- Path Parameter
-- Query Parameter
-- Request Body
-- Data Validation
-```
+* REST API Design
+* CRUD Operations
+* Validation
+* Path Parameters
+* Query Parameters
+* Request Body
+* Filtering and Search
+* Backend Workflow
+* API Testing and Debugging
